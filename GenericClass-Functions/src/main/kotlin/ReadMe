@@ -1,0 +1,81 @@
+Scenario
+The Little Lemon restaurant wants to computerize its inventory.
+They want to keep track of the ingredients they have in stock.
+You’ve been asked to create a generic class that can manage the stock of any ingredient.
+You have also been asked to add a generic function that returns an inventory of a certain type.
+
+Definition of key topic
+In this exercise, you will implement an Inventory class for Little Lemon.
+This class will have a generic type of Ingredient.
+Ingredient is a sealed class with all the ingredient types that Little Lemon uses in its dishes.
+
+The Inventory class will have an addIngredient function that will add one Ingredient element to the
+inventory. It will also have a count function that returns the number of ingredients in the inventory.
+
+You will also implement a generic function called newInventory.
+This function will return a new instance of the Inventory class with a given ingredient type.
+
+Instructions
+Step 1: Exercise setup
+You will complete this exercise using the
+Kotlin Playground
+. Start by declaring the Ingredient sealed class at the top of the code:
+
+1234567
+sealed class Ingredient {
+    object Cheese : Ingredient()
+    object Flour : Ingredient()
+    object Egg : Ingredient()
+    object Onion : Ingredient()
+}
+
+Step 2: Implement the generic Inventory class
+You will now implement the Inventory class that stores ingredients.
+
+Start by creating a class called Inventory.
+This class should have a single generic type named INGREDIENT which extends the Ingredient interface.
+
+Inside the newly created class,
+declare a private variable called contents of type MutableList of INGREDIENT.
+Initialize it with an empty mutable list.
+
+In the next step, you will add functions for interacting with Inventory objects.
+
+Step 3: Adding functions to the Inventory class
+To be able to use the Inventory class, you need to be able to add ingredients to it and
+to be able to count the ingredients added.
+
+Start by implementing a function called addIngredient.
+This function has one parameter named ingredient which is of type INGREDIENT.
+In the function body, add ingredient to contents.
+
+Next, implement a function called count with a return type of Int.
+In the body of count, make it return the size of contents.
+
+Next, you will implement a function that returns a new instance of Inventory for a given ingredient type.
+
+Step 4: Implement a generic function for Inventory
+In this step, you will introduce the newInventory() function,
+which returns a new instance of Inventory for a given ingredient type.
+
+Start by creating a companion object for Inventory.
+
+In the companion object, add a generic function called newInventory().
+The generic type is named INGREDIENT. INGREDIENT extends Ingredient.
+The return type of newInventory is an Inventory of type INGREDIENT.
+
+In the body of newInventory(), return a new Inventory instance.
+
+In the next and final step, you will validate your solution.
+
+Step 5: Validating the code
+To ensure your implementation works as expected,
+implement the main() function.
+First, instantiate a cheese inventory by calling newInventory with a type of Cheese
+and assign it to a cheeseInventory variable.
+
+Then, add Cheese to cheeseInventory by calling addIngredient twice passing in Cheese as an argument.
+
+Finally, to validate the code, print out the inventory count by calling count() on cheeseInventory.
+
+If you run the code now, you should see the number 2 printed out.

@@ -1,0 +1,43 @@
+Let's examine how a similar approach can be used when the little lemon restaurant needs to hire new chefs.
+In the restaurant business, they refer to the main meals that a diner can order as a dish.
+For instance, lasagna is a dish as our margherita pizza and mushroom risotto.
+To help the new chefs get started, you are asked to find dishes that have no more than three ingredients
+and list them by their name and the number of ingredients they contain.
+You are also asked to update little lemons address book, marking all existing employees as veterans,
+and then adding the new chefs. Finally, you're asked to output the list of employees and
+whether they are veterans. Kotlin collection processing functions operate on a target collection
+and return the result collection. The properties of these functions mean that the functions are designed
+to be changed or called one after the other.
+Each function operates on the output of the previous one.
+To find the dishes with the fewest ingredients, you would start by filtering the dishes,
+keeping just those with no more than three ingredients. Then map the dishes to strings of dish names
+and the number of ingredients. To update little lemons address book, first map the current employees
+to mark them as veterans, then use fold to add the new chefs to the existing employees.
+Lastly, use map again to generate a list of employee names and veteran statuses.
+Here is little lemons recipe book again. It holds a list of all the dishes.
+Every dish holds a set of its ingredients. This example includes orange juice.
+The place to start is by declaring the easy dishes function. This function takes a maximum number
+of ingredients as input. It then filters the list of dishes by comparing the size of each
+ingredient set against the maximum number provided. Each filter dish is then passed to the
+map function to be converted to a string of the dish name and the size of its ingredients set.
+To get the dishes with no more than three ingredients, that little lemon requested you instantiate
+recipe book and call easy dishes on it, passing in three as the maximum number of ingredients.
+The result is printed out by passing it to print in. When the code is run, only dishes with three
+or fewer ingredients are returned with the appropriate ingredient for each.
+Next, let's help little lemon obtain an updated list of employees.
+Their address book holds the names and is veteran field was added for each employee.
+Initially, none of the employees are veterans. To deliver the requested list of employees,
+you would start by adding the print with new employees function.
+It takes a list of new employees as an input. It then calls mapped replace every existing employee
+with an updated copy with the veteran flag set to true.
+Then it calls fold passing in the new employees list made mutable using two mutable list as the
+initial value.
+The fold action is to add each existing employee to this new mutable list.
+Finally, it uses a for each to iterate all employees and print out the name and veteran status of each.
+You would need to instantiate a dress book and call print with new employees on the new instance,
+then run main to see a list of the names of all employees old and new,
+printed out with their veteran status.
+That's a demonstration of how Scotland's collection processing functions operate on a target
+collection and return the result collection.
+With both of the little lemon examples, the properties of these functions are like the functions
+to be called one after the other, with each function operating on the output of the previous one.

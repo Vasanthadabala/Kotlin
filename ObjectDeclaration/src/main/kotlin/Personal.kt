@@ -1,0 +1,3 @@
+interface Personal {
+    fun serveCustomer()
+}
